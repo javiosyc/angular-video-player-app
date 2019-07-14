@@ -1,0 +1,48 @@
+<div class="player__controls">
+        <div class="row">
+            <div class="col-md-1 col-sm-1">
+                <button id="toggleButton" class="player__button toggle btn-circle btn-xl" (click)= "toggleButton($event)">
+                    <i class="fa fa-play" [ngClass]= "{'fa-play':!isPlaying , 'fa-pause':isPlaying}"></i>
+                </button>
+            </div>
+            <div class="col-md-1 col-sm-1">
+                <button id="volume_plus" class="player__button btn-circle btn-xl" (click) = "sendAction('volumnUp')" >
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+            <div class="col-md-1 col-sm-1">
+                <button id="volume_minus" class="player__button btn-circle btn-xl" (click) = "sendAction('volumnMinus')">
+                    <i class="fa fa-minus"></i>
+                </button>
+            </div>
+            <div class="col-md-1 col-sm-1">
+                <button id="video_reload" class="player__button btn-circle btn-xl" (click) = "sendAction('reload')">
+                    <i class="fa fa-refresh"></i>
+                </button>
+            </div>
+            <div class="col-md-2 col-sm-2">
+                <button id="video_mute_toggle" class="player__button btn-circle btn-xl" (click)= "toggleVolumnButton($event)">
+                    <i class="fa fa-volume-up" [ngClass]= "{'fa-volume-up':!isMuted , 'fa-volume-off':isMuted}"></i>
+                </button>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <button id="video_like" class="player__button btn-round btn-xl">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                </button>
+                <span id="video_like_number" class="badge badge-success badge-player-text"></span>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <button id="video_dislike" class="player__button btn-round btn-xl">
+                    <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                </button>
+                <span id="video_dislike_number" class="badge badge-info badge-player-text"></span>
+            </div>
+        </div>
+
+        <div class="progress" style="margin: 10px">
+            <div id="progress-bar" class="progress-bar bg-info" role="progressbar" aria-valuemin="0"
+                [ngStyle] = "{'width':  progressPercent+ '%' }"
+                [attr.aria-valuenow] = progressPercent
+                aria-valuemax="100"></div>
+        </div>
+    </div>

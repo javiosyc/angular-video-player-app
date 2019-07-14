@@ -1,0 +1,7 @@
+<div class="col-md-4 col-sm-12 video_list">
+    <ul id="playlist" class="list-group">
+        <li *ngFor="let item of playList; let i = index" class="list-group-item" [attr.data-src] = "item.src" (click)="click(item)" >
+            <i class="fa fa-play-circle">{{item.title}}</i>
+        </li>
+    </ul>
+</div>

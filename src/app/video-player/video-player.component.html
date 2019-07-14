@@ -1,0 +1,9 @@
+<div class="player container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-sm-12">
+            <app-player [action]= action (progressPercentEvent)= "updateProgressPercent($event)" [currentPlay]= currentPlay></app-player>
+            <app-controls (actionEvent)= "onActionButtonClick($event)" [configuration] = "configuration"></app-controls>
+        </div>
+        <app-playlist [playList]= playList (selectedVideo)= "onSelectedVideoHandler($event)"></app-playlist>        
+    </div>
+</div>
